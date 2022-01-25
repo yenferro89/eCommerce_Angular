@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/e-organic-shop",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

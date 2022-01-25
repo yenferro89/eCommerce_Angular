@@ -1,0 +1,35 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded" aria-label="Eleventh navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">eOrganicShop</a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarsExample09" style="">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/shopping-cart">Shopping Cart</a>
+          </li>
+          <ng-template #anonymousUser>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+          </ng-template>
+          <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ appUser.name }}
+            </a>
+            <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown09">
+              <a class="dropdown-item" routerLink="my/orders">My Orders</a>
+              <ng-container *ngIf="appUser.isAdmin" >
+                <a class="dropdown-item" routerLink="admin/products">Manage Products</a>
+                <a class="dropdown-item" routerLink="admin/orders">Manage Orders</a>
+              </ng-container>
+              <a class="dropdown-item" (click)="logout()" >Log Out</a>
+            </ul>
+          </li>
+        </ul> 
+      </div>
+    </div>
+</nav>
