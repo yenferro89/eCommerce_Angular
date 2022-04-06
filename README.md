@@ -1,5 +1,5 @@
 # EOrganicShop
-
+This is a sample eCommerce realtime web application using Angular for the frontend and firebase for the backend.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
 ## Development server
